@@ -139,7 +139,7 @@ p11: {
              ou via mes réseaux professionnels.'
     
     },
-    meta: { title: { home: "Mon Portfolio"}},
+    meta: { title: { home: "Kalash Abdulaziz"}},
     aria: { dark_mode: "Activer le mode sombre", light_mode: "Activer le mode clair" },
       
     project: {
@@ -293,7 +293,7 @@ p11: {
              or through my professional networks.'
     
     },
-    meta: { title: { home: "My Portfolio" }},
+    meta: { title: { home: "Kalash Abdulaziz" }},
     aria: { dark_mode: "Enable dark mode", light_mode: "Enable light mode" },
     
     project: {
