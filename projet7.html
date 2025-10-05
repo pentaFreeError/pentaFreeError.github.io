@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="page-id" content="projet7" />
+  <meta name="theme-color" content="#0E1116" id="meta-theme-color" />
+  <title>Projet 7 Corewar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:," />
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <a href="./index.html" class="brand__link" aria-label="Accueil">
+        <span class="brand__logo" aria-hidden="true">KD</span>
+        <span class="brand__text" data-i18n="brand">Mon Portfolio</span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="./index.html#about" data-i18n="nav.about" class="nav__link">À propos</a>
+      <a href="./index.html#projects" data-i18n="nav.projects" class="nav__link is-active">Projets</a>
+      <a href="./index.html#contact" data-i18n="nav.contact" class="nav__link">Contact</a>
+    </nav>
+    <div class="toggles">
+      <div class="lang-switch" role="group" aria-label="Choix de langue">
+        <button class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+        <button id="themeToggle" class="theme-toggle" role="switch" aria-checked="true" aria-label="Basculer le thème"></button>
+    </div>
+    <div class="nav-underline" aria-hidden="true"></div>
+  </header>
+
+  <main id="main" class="container project">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="./index.html">Accueil</a>
+      <span>›</span>
+      <a href="./index.html#projects">Projets</a>
+      <span>›</span>
+      <span data-i18n="projects.p7.title"></span>
+    </nav>
+
+    <header class="project__header">
+      <h1 class="project__title" data-i18n="projects.p7.title"></h1>
+      <ul class="tags">
+        <li class="tag" data-tag="IA" data-i18n="projects.p7.tags.a"></li>
+        <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p7.tags.b"></li>
+        <li class="tag" data-tag="Backend" data-i18n="projects.p7.tags.c"></li>
+        <li class="tag" data-tag="Frontend" data-i18n="projects.p7.tags.d"></li>
+        <li class="tag" data-tag="Data" data-i18n="projects.p7.tags.e"></li>
+      </ul>
+      <div class="project__meta">
+        <a class="btn btn--secondary" href="https://github.com/pentaFreeError/corewar" target="_blank" rel="noopener" data-i18n="project.view_code">Voir le code<span class="ext" aria-hidden="true">↗︎</span></a>
+      </div>
+    </header>
+
+    <div class="carousel" data-carousel>
+      <button class="carousel__btn prev" aria-label="Image précédente">‹</button>
+      <div class="carousel__track">
+        <img src="assets/projet7.png" alt="" />
+        <img src="assets/projet7-2.png" alt="" />
+        <img src="assets/projet7-3.png" alt="" />
+        <img src="assets/projet7-4.png" alt="" />
+      </div>
+      <button class="carousel__btn next" aria-label="Image suivante">›</button>
+      <div class="carousel__thumbs" aria-hidden="true"></div>
+    </div>
+
+    <section class="prose">
+      <p data-i18n="projects.p7.long"></p>
+    </section>
+
+    <nav class="proj-nav">
+      <a class="btn btn--ghost" href="projet6.html" data-i18n="project.nav_prev"></a>
+      <a class="btn btn--ghost" href="projet8.html" data-i18n="project.nav_next"></a>
+      <a class="btn btn--secondary" href="./index.html#projects" data-i18n="project.nav_back"></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <p class="copy">© <span id="year"></span> <span data-i18n="brand">Kalash Daniel</span></p>
+  </footer>
+</body>
+</html>
