@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="page-id" content="home" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#0E1116" id="meta-theme-color" />
+  <title>Kalash Daniel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:title" content="Kalash Daniel" />
+  <meta property="og:description" content="Développeur, projets, expérience et contact." />
+  <meta property="og:type" content="website" />
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<script>
+async function downloadCV(e) {
+  e.preventDefault();
+  const res = await fetch('assets/cv.pdf'); 
+  if (!res.ok) { alert('Impossible de récupérer le CV.'); return; }
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'CV_Kalash_Daniel.pdf';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+</script>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <a href="./index.html" class="brand__link" aria-label="Accueil">
+        <span class="brand__logo" aria-hidden="true">KD</span>
+        <span class="brand__text" data-i18n="brand">Mon Portfolio</span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#about" data-i18n="nav.about" class="nav__link is-active">À propos</a>
+      <a href="#projects" data-i18n="nav.projects" class="nav__link">Projets</a>
+      <a href="#contact" data-i18n="nav.contact" class="nav__link">Contact</a>
+    </nav>
+    <div class="toggles">
+      <div class="lang-switch" role="group" aria-label="Choix de langue">
+        <button class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+        <button id="themeToggle" class="theme-toggle" role="switch" aria-checked="true" aria-label="Basculer le thème"></button>
+    </div>
+    <div class="nav-underline" aria-hidden="true"></div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero section" id="home">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Ingénieur • Caen, France</p>
+      <h1 class="hero__title" data-i18n="hero.title"></h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle"></p>
+    </section>
+
+
+    <section id="about" class="section">
+      <h2 class="section__title" data-i18n="about.title">À propos</h2>
+      <div class="cv-feature card">
+        <div class="cv-feature__body">
+          <div class="cv-feature__meta">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div>
+              <div class="small">CV · PDF</div>
+              <div class="muted" data-i18n="about.cv_meta">70 Ko • mis à jour août 2025</div>
+            </div>
+          </div>
+          <div class="cv-feature__actions">
+            <a class="btn btn--primary" href="#" onclick="downloadCV(event)" data-i18n="hero.download_cv">Télécharger mon CV</a>
+            <a class="btn btn--ghost" href="assets/cv.pdf" target="_blank" rel="noopener" data-i18n="about.cv_view">Voir le CV en PDF<span class="ext" aria-hidden="true">↗︎</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section__title" data-i18n="projects.title">Projets</h2>
+      <div class="projects-grid">
+
+<a class="project-card" href="projet1.html">
+  <div class="project-card__media">
+    <img src="assets/projet1.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p1.title">Parachute Encoder</h3>
+    <p class="muted" data-i18n="projects.p1.desc">
+      Application graphique pour encoder des messages en motifs binaires circulaires.
+    </p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Frontend">GUI</li>
+      <li class="tag" data-tag="Frontend">Qt</li>
+      <li class="tag" data-tag="Backend">C++</li>
+    </ul>
+  </div>
+</a>
+
+
+<a class="project-card" href="projet2.html">
+  <div class="project-card__media">
+    <img src="assets/projet2.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p2.title"></h3>
+    <p class="muted" data-i18n="projects.p2.desc">
+    </p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p2.tags.a"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p2.tags.b"></li>
+      <li class="tag" data-tag="Backend" data-i18n="projects.p2.tags.c"></li>
+    </ul>
+  </div>
+</a>
+
+
+<a class="project-card" href="projet3.html">
+  <div class="project-card__media">
+    <img src="assets/projet3.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p3.title"></h3>
+    <p class="muted" data-i18n="projects.p3.desc">
+    </p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Backend" data-i18n="projects.p3.tags.a"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p3.tags.b"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p3.tags.c"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p3.tags.d"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet4.html">
+  <div class="project-card__media">
+    <img src="assets/projet4.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p4.title"></h3>
+    <p class="muted" data-i18n="projects.p4.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p4.tags.a"></li>
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p4.tags.b"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p4.tags.c"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p4.tags.d"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet5.html">
+  <div class="project-card__media">
+    <img src="assets/projet5.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p5.title"></h3>
+    <p class="muted" data-i18n="projects.p5.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Backend" data-i18n="projects.p5.tags.a"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p5.tags.b"></li>
+      <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p5.tags.c"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p5.tags.d"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet6.html">
+  <div class="project-card__media">
+    <img src="assets/projet6.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p6.title"></h3>
+    <p class="muted" data-i18n="projects.p6.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="IA" data-i18n="projects.p6.tags.a"></li>
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p6.tags.b"></li>
+      <li class="tag" data-tag="Backend" data-i18n="projects.p6.tags.c"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p6.tags.d"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet7.html">
+  <div class="project-card__media">
+    <img src="assets/projet7.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p7.title"></h3>
+    <p class="muted" data-i18n="projects.p7.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p7.tags.a"></li>
+      <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p7.tags.b"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p7.tags.c"></li>
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p7.tags.d"></li>
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p7.tags.e"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet8.html">
+  <div class="project-card__media">
+    <img src="assets/projet8.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p8.title"></h3>
+    <p class="muted" data-i18n="projects.p8.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Backend" data-i18n="projects.p8.tags.a"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p8.tags.b"></li>
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p8.tags.c"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p8.tags.d"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p8.tags.e"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet9.html">
+  <div class="project-card__media">
+    <img src="assets/projet9.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p9.title"></h3>
+    <p class="muted" data-i18n="projects.p9.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p9.tags.a"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p9.tags.b"></li>
+      <li class="tag" data-tag="Data" data-i18n="projects.p9.tags.c"></li>
+      <li class="tag" data-tag="Backend" data-i18n="projects.p9.tags.d"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p9.tags.e"></li>
+    </ul>
+  </div>
+</a>
+
+<a class="project-card" href="projet10.html">
+  <div class="project-card__media">
+    <img src="assets/projet10.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p10.title"></h3>
+    <p class="muted" data-i18n="projects.p10.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p10.tags.a"></li>
+      <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p10.tags.b"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p10.tags.c"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p10.tags.d"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p10.tags.e"></li>
+    </ul>
+  </div>
+</a>
+
+
+<a class="project-card" href="projet11.html">
+  <div class="project-card__media">
+    <img src="assets/projet11.png" alt="" loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <h3 class="h3" data-i18n="projects.p11.title"></h3>
+    <p class="muted" data-i18n="projects.p11.desc"></p>
+    <ul class="tags" aria-label="Mots-clés">
+      <li class="tag" data-tag="DevOps" data-i18n="projects.p11.tags.a"></li>
+      <li class="tag" data-tag="Cybersécurité" data-i18n="projects.p11.tags.b"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p11.tags.c"></li>
+      <li class="tag" data-tag="IA" data-i18n="projects.p11.tags.d"></li>
+      <li class="tag" data-tag="Frontend" data-i18n="projects.p11.tags.e"></li>
+    </ul>
+  </div>
+</a>
+
+
+
+
+
+
+      </div>
+    </section>
+
+
+
+      <section id="contact" class="section">
+        <h2 class="section__title" data-i18n="contact.title">Contact</h2>
+        <p class="muted" data-i18n="contact.desc">
+          Vous avez un projet, une opportunité ou simplement envie d’échanger&nbsp;?  
+          N’hésitez pas à me contacter par email :  
+          <a class="link" href="mailto:danielkalash14@gmail.com">danielkalash14@gmail.com</a>  
+          ou via mes réseaux professionnels.
+        </p>
+        <div class="socials">
+          <a class="link" href="https://github.com/pentaFreeError" target="_blank" rel="noopener">
+            GitHub<span class="ext" aria-hidden="true">↗︎</span>
+          </a>
+          <a class="link" href="https://www.linkedin.com/in/daniel-kalash-b5740329a/" target="_blank" rel="noopener">
+            LinkedIn<span class="ext" aria-hidden="true">↗︎</span>
+          </a>
+        </div>
+      </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="copy">© <span id="year"></span> <span data-i18n="brand">Kalash Daniel</span></p>
+  </footer>
+</body>
+</html>
